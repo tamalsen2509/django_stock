@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if ticker %}
+	{{ ticker }}
+{% endif %}
+	
+
+{% if api %}
+	{% if api == "Error.." %}
+		There is problem with your ticker symbol,
+		please try again..
+	{% else %}
+
+
+	<h1>Delayed stock price of {{ api.symbol }}</h1><br/>
+	<h2></h2><br/>
+	{% endif %}
+{% endif %}
+
+
+{% for key, value in api.items %}	
+	{{key}}: {{value}} <br/>
+{% endfor %}
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
